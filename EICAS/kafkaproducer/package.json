@@ -1,0 +1,18 @@
+{
+  "name": "kafkaproducer",
+  "version": "1.0.0",
+  "description": "Kafka Messages",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "kafka-node": "^0.3.2",
+    "sleep": "^3.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matias Candelieri",
+  "license": "ISC"
+}
