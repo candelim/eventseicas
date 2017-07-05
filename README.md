@@ -22,8 +22,8 @@ Estos son servicios que se ejecutan para enviar rafagas de eventos a EICAS para 
 
 ### How do I get set up? ###
 
-La configuración para el ambiente de DMO esta en el uso de kafka.js.
-El seteo de tiempo entre ejecuciones de cada servicio corriendo en cada contenedor se puede setear desde el script de inicio (startEvents.sh) modificando la variable TIMER
+La configuración para el ambiente está en una variable de entorno IP_HOST que se está enviando en los scripts startEventsDMO.sh o startEventsTST.sh
+El seteo de tiempo entre ejecuciones de cada servicio corriendo en cada contenedor se puede setear desde el script de inicio (startEventsDMO.sh o startEventsTST.sh) modificando la variable TIMER
 
 
 ### Contribution guidelines ###
