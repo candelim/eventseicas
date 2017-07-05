@@ -6,15 +6,15 @@ A partir de una imagen de docker node:5, crear una imagen con el nombre appeicas
 
 docker build -t appeicas .
 
-Luego ejecutar
+Luego ejecutar, dependiendo del entorno
 
-./startEvents.sh
+./startEventsDMO.sh o ./startEventsTST.sh
 
-Para hacer stop y limpiar los contenedores que se hayan ejecutado ejecutar
+Para hacer stop y limpiar los contenedores que se hayan ejecutado ejecutar, dependiendo del entorno
 
-./killEvents.sh
+./killEventsDMO.sh o ./killEventsTST.sh
 
-La configuración de tiempo entre ejecuciones de cada servicio puede editarse en el script startEvents.sh (variable TIMER)
+La configuración de tiempo entre ejecuciones de cada servicio puede editarse en el script startEventsDMO.sh o startEventsTST (variable TIMER). La IP de cada entorno (DMO o TST está dada por la variable de entorno que se envía en el script IP_HOST)
 
 ### What is this repository for? ###
 
