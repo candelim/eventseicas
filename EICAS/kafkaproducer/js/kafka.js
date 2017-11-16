@@ -14,14 +14,14 @@ exports.insert = function (mess,topicName) {
 
 	producer.on('ready', function () {
 		producer.send(payloads, function (err, data) {
-						console.log(data);
-						process.exit();
+			console.log(data);
+			//process.exit();
 		});
 	});
 
 	producer.on('error', function (err) {
 		console.log('Error');
-		process.exit();
+		//process.exit();
 	});
 
 }
