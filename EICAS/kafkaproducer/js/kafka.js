@@ -15,12 +15,14 @@ exports.insert = function (mess,topicName) {
 	producer.on('ready', function () {
 		producer.send(payloads, function (err, data) {
 			console.log(data);
+			producer.close();
 			//process.exit();
 		});
 	});
 
 	producer.on('error', function (err) {
 		console.log('Error');
+		producer.close();
 		//process.exit();
 	});
 
