@@ -9,6 +9,6 @@ var msgtem = require('./js/temperature.js');
 //setInterval(msghum.msghumidity,5000);
 //setInterval(msgele.msgelevation,5000);
 //setInterval(msgpre.msgpressure, 5000);
-setInterval(msgtem.msgtemperature,5000);
+setInterval(msgtem.msgtemperature,20000);
 //setInterval(msginf.msginfraestructura,5000);
 //setInterval(msgflo.msgflow, 5000);
