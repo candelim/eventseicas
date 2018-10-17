@@ -20,8 +20,8 @@ docker.container.list()
         }
         var tst = [];
         var dmo= [];
-        tst[0] = '{"value":"' + list + '","tipoProducto":"Proyecto" ,"fecha":\"' + fecha + '\","level1":"tst"}';
-        dmo[0] = '{"value":"' + list + '","tipoProducto":"Proyecto" ,"fecha":\"' + fecha + '\","level1":"dmo"}';
+        tst[0] = '{"value":"' + list + '","tipoProducto":"Proyecto" ,"fechaUltMod":\"' + fecha + '\","level1":"tst"}';
+        dmo[0] = '{"value":"' + list + '","tipoProducto":"Proyecto" ,"fechaUltMod":\"' + fecha + '\","level1":"dmo"}';
 
         console.log(tst)
         console.log(dmo);
