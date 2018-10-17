@@ -18,15 +18,11 @@ docker.container.list()
             list = list + " " + name.substring(1, name.length)
 
         }
-        var tst = [];
-        var dmo= [];
-        tst[0] = '{"value":"' + list + '","tipoProducto":"Proyecto" ,"fechaUltMod":\"' + fecha + '\","level1":"tst"}';
-        dmo[0] = '{"value":"' + list + '","tipoProducto":"Proyecto" ,"fechaUltMod":\"' + fecha + '\","level1":"dmo"}';
+        var msj = [];
+        msj[0] = '{"values":"' + list + '","tipoProducto":"proyecto" ,"fechaUltMod":\"' + fecha + '\"}';
 
-        console.log(tst)
-        console.log(dmo);
-        kaf.insert(tst, 'proyect_topic');
-        kaf.insert(dmo, 'proyect_topic','192.168.3.12');
+        console.log(msj)
+        kaf.insert(msj, 'proyect_topic');
 
     })
 
