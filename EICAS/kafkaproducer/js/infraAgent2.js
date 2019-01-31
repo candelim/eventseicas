@@ -13,8 +13,9 @@ hostname(function (err, hname) {
 });
 
 
-setInterval(infraAgent2, 5000);
-
+exports.init = function () {
+    setInterval(infraAgent2, 5000);
+}
 function infraAgent2() {
     monitor.start();
     monitor.on('monitor', function (event) {

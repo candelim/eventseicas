@@ -8,8 +8,9 @@ var d = new Date,
 const docker = new Docker({socketPath: '/var/run/docker.sock'});
 
 
-setInterval(project, 5000);
-
+exports.init = function () {
+    setInterval(project, 5000);
+}
 function project() {
     var list = "";
 // List
