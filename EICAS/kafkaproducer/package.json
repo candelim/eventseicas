@@ -7,8 +7,7 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "kafka-node": "^0.3.2",
-    "sleep": "^3.0.1",
-    "node-docker-api": "^1.1.22"
+    "sleep": "^3.0.1"
   },
   "devDependencies": {},
   "scripts": {
