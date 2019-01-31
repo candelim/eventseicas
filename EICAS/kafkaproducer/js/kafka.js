@@ -4,7 +4,7 @@ exports.insert = function (mess,topicName) {
     var kafka = require('kafka-node'),
         Producer = kafka.Producer,
         ip = process.env.IP_HOST,
-        client = new kafka.Client(ip +':2181'),
+        client = new kafka.KafkaClient(ip +':2181'),
         producer = new Producer(client);
 
     var payloads = [
