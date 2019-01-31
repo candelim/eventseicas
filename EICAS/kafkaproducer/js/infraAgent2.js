@@ -8,16 +8,18 @@ var monitor = require('os-monitor'),
     kaf = require('./kafka.js'),
     topicName = 'infrastructure_topic';
 
-hostname(function (err, hname) {
-    array[0] = hname;
-});
 
 
 exports.init = function () {
+    console.log("ENTROOOO")
     setInterval(infraAgent2, 5000);
 }
-
 function infraAgent2() {
+
+    hostname(function (err, hname) {
+        array[0] = hname;
+    });
+
     monitor.start();
     monitor.on('monitor', function (event) {
 
