@@ -11,7 +11,6 @@ var monitor = require('os-monitor'),
 
 
 exports.init = function () {
-    console.log("ENTROOOO")
     setInterval(infraAgent2, 5000);
 }
 function infraAgent2() {
