@@ -6,7 +6,7 @@ var monitor = require('os-monitor'),
     ms,
     fec = require('./date.js'),
     kaf = require('./kafka.js'),
-    topicName = 'infrastructure_topic';
+    topicName = 'infra_topic';
 
 
 
