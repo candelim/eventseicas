@@ -11,6 +11,7 @@ var monitor = require('os-monitor'),
 
 
 exports.init = function () {
+    monitor.start();
     setInterval(infraAgent2, 5000);
 }
 function infraAgent2() {
@@ -19,7 +20,6 @@ function infraAgent2() {
         array[0] = hname;
     });
 
-    monitor.start();
     monitor.on('monitor', function (event) {
 
         var d = new Date,
