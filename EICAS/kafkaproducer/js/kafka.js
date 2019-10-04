@@ -7,7 +7,7 @@ exports.insert = function (mess,topicName) {
 		ip = process.env.IP_HOST,
 	    	Client = kafka.KafkaClient,
     		client = new Client({
-        			autoConnect: false,
+        			autoConnect: true,
         			kafkaHost: ip +':9092'
     			}),
 		producer = new Producer(client);
