@@ -5,7 +5,7 @@ exports.insert = function (mess,topicName) {
 		Producer = kafka.Producer,
 		KeyedMessage = kafka.KeyedMessage,
 		ip = process.env.IP_HOST,
-		client = new kafka.Client(ip +':2181'),
+		client = new kafka.Client(ip +':9092'),
 		producer = new Producer(client);
 
 	var payloads = [
