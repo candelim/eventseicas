@@ -1,11 +1,12 @@
 exports.insert = function (mess,topicName) {
 
 	
-	var kafka = require('kafka-node'),
+	const kafka = require('kafka-node'),
 		Producer = kafka.Producer,
 		KeyedMessage = kafka.KeyedMessage,
 		ip = process.env.IP_HOST,
-		client = new kafka.Client({
+	    	Client = kafka.KafkaClient,
+    		client = new Client({
         			autoConnect: false,
         			kafkaHost: ip +':9092'
     			}),
