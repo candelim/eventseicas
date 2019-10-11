@@ -4,7 +4,7 @@ exports.msgtemperature = function () {
 	d = new Date,
 	sensor = Array("UTN0101","UTN0102","UTN0103"),
 	fecha = fec.formatDate(d),
-	topicName = 'temperature-topic';
+	topicName = 'temperature-topic-spark';
 	
   for (var ms=[],i=0;i<3;++i)
 	ms[i] = '{"id":2023,"idSensor":"' + sensor[Math.floor(Math.random()*sensor.length)] +'","tipoTerminal":"SENSOR","valor":"'+ Math.floor((Math.random() * 20)) + '", "unidad":"C", "fechaUltMod":"' + fecha +'","tipoProducto":"Temperatura"}';
