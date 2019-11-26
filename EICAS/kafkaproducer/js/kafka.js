@@ -5,10 +5,11 @@ exports.insert = function (mess,topicName) {
 		Producer = kafka.Producer,
 		KeyedMessage = kafka.KeyedMessage,
 		ip = process.env.IP_HOST,
+		port = process.env.PORT_HOST,
 	    	Client = kafka.KafkaClient,
     		client = new Client({
         			autoConnect: true,
-        			kafkaHost: ip +':9092'
+        			kafkaHost: ip + ':' + port
     			}),
 		producer = new Producer(client);
 
