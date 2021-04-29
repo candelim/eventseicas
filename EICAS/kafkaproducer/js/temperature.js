@@ -2,7 +2,7 @@ exports.msgtemperature = function () {
   var fec = require('./date.js'),
 	kaf = require('./kafka.js'),
 	d = new Date,
-	sensor = Array("UTN0101","UTN0102","UTN0103"),
+	sensor = Array("SEMPERTI-0101","SEMPERTI-0102","SEMPERTI-0103"),
 	fecha = fec.formatDate(d),
 	topicName = 'temperature-topic';
 	
