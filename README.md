@@ -1,38 +1,27 @@
 # README #
 
-Configuracion inicial y ejecucion
+### Introducción ###
 
-A partir de una imagen de docker node:5, crear una imagen con el nombre appeicas
+Este repositorio sirve como prueba de concepto de servicios que se ejecutan para enviar eventos (mensajes) a distintos topics de Kafka como una prueba de concepto de AMQStreams 
+Estos servcios son sumilaciones de sensores de temperatura, humedad, altitud, cuadal y presión para una prueba de concepto que permitiría el desarrollo de servicios IoT integrados mediante AMQStreams
 
-docker build -t appeicas .
+### Cómo realizar el despliegue de la aplicación ###
 
-Luego ejecutar, dependiendo del entorno
+Esta aplicación está pensada para poder usar las mejores prácticas en OCP (OpenShift Container Platform) lo que permite realizar el build y deploy de esta aplicación utilizando builder images.
 
-./startEventsDMO.sh o ./startEventsTST.sh
+Para ello alcanza con realizar, utilizando el cliente OC, la ejecución del siguiente comando:
 
-Para hacer stop y limpiar los contenedores que se hayan ejecutado ejecutar, dependiendo del entorno
+`
+oc new-app https://github.com/candelim/eventseicas.git#amqstreams
+` 
 
-./killEventsDMO.sh o ./killEventsTST.sh
+### Configuraciones para la aplicación ###
 
-La configuración de tiempo entre ejecuciones de cada servicio puede editarse en el script startEventsDMO.sh o startEventsTST (variable TIMER). La IP de cada entorno (DMO o TST está dada por la variable de entorno que se envía en el script IP_HOST)
+Para el correcto funcionamiento de la aplicación, solo deben configurarse 2 variables de entornos que identificarán en endpoint y puerto correspondientes al cluster de Kafka (AMQStreams) al cual se deba realizar la conexión.
 
-### What is this repository for? ###
+Lo único necesario es realizar la configuración de las variables de entorno según corresponda y ejecutar un nuevo rollout
 
-Estos son servicios que se ejecutan para enviar rafagas de eventos a EICAS para que sean procesados. 
-
-### How do I get set up? ###
-
-La configuración para el ambiente está en una variable de entorno IP_HOST que se está enviando en los scripts startEventsDMO.sh o startEventsTST.sh
-El seteo de tiempo entre ejecuciones de cada servicio corriendo en cada contenedor se puede setear desde el script de inicio (startEventsDMO.sh o startEventsTST.sh) modificando la variable TIMER
-
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+`
+oc set env dc/eventeicas IP_HOST=host-servicio-amqstreams PORT_HOST=9092
+oc rollout latest dc/eventeicas
+`
