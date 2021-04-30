@@ -22,6 +22,9 @@ Para el correcto funcionamiento de la aplicación, solo deben configurarse 2 var
 Lo único necesario es realizar la configuración de las variables de entorno según corresponda y ejecutar un nuevo rollout
 
 `
-oc set env dc/eventeicas IP_HOST=host-servicio-amqstreams PORT_HOST=9092
-oc rollout latest dc/eventeicas
+oc set env dc/eventseicas-git IP_HOST=host-servicio-amqstreams PORT_HOST=9092
+`
+
+`
+oc rollout latest dc/eventseicas-git
 `
